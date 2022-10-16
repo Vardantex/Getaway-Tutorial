@@ -2,7 +2,7 @@ extends Control
 
 
 func _ready() -> void:
-	pass
+	$VBoxContainer/CenterContainer/GridContainer/NameTextBox.text = Saves.save_data["Player_name"]
 
 
 func _on_HostButton_pressed() -> void:
