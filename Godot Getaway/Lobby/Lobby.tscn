@@ -100,8 +100,8 @@ margin_right = 642.0
 margin_bottom = 328.0
 text = "Join"
 
-[node name="WaitingRoom" parent="." instance=ExtResource( 2 )]
-visible = true
+[node name="WaitingRoom" parent="." groups=["WaitingRoom"] instance=ExtResource( 2 )]
 
+[connection signal="text_changed" from="VBoxContainer/CenterContainer/GridContainer/NameTextBox" to="." method="_on_NameTextBox_text_changed"]
 [connection signal="pressed" from="VBoxContainer/CenterContainer/GridContainer/HostButton" to="." method="_on_HostButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/CenterContainer/GridContainer/JoinButton" to="." method="_on_JoinButton_pressed"]
