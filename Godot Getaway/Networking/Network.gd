@@ -77,8 +77,13 @@ func _on_player_connected(id):
 sync func update_waiting_room():
 	get_tree().call_group("WaitingRoom", "refresh_players", players)
 
+#only the host can start game
+func start_game():
+	rpc("load_world")
 
-
+#When host start game, load world for all users
+sync func load_world():
+	get_tree().change_scene("res://World/World.tscn")
 
 
 

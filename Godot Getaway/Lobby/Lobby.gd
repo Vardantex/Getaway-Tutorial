@@ -13,8 +13,11 @@ func _ready() -> void:
 
 func _on_HostButton_pressed() -> void:
 	Network.selected_port = int(port.text)
-	
 	Network.create_server()
+	
+	#Call the read button group
+	get_tree().call_group("HostOnly", "show")
+	
 	#show the waiting lobby GUI
 	create_waiting_room()
 
@@ -36,3 +39,7 @@ func create_waiting_room():
 	$WaitingRoom.popup_centered()
 	#Refresh players on the network
 	$WaitingRoom.refresh_players(Network.players)
+
+
+func _on_ReadyButton_pressed() -> void:
+	Network.start_game()
