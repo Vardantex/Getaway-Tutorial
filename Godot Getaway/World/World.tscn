@@ -1,0 +1,104 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[node name="World" type="Spatial"]
+
+[node name="Floor" type="CSGBox" parent="."]
+use_collision = true
+width = 200.0
+height = 1.0
+depth = 200.0
+
+[node name="Wall1" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 100 )
+width = 200.0
+height = 15.0
+depth = 1.0
+
+[node name="Wall2" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -100 )
+width = 200.0
+height = 15.0
+depth = 1.0
+
+[node name="Wall3" type="CSGBox" parent="Floor"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 99.9972, 0, 0.74699 )
+width = 200.0
+height = 15.0
+depth = 1.0
+
+[node name="Wall4" type="CSGBox" parent="Floor"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -99.9972, 0, -0.74699 )
+width = 200.0
+height = 15.0
+depth = 1.0
+
+[node name="CSGBox" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
+width = 4.0
+height = 6.0
+depth = 4.0
+material = SubResource( 1 )
+
+[node name="CSGBox2" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.8907, 4, 0 )
+width = 4.0
+height = 6.0
+depth = 4.0
+material = SubResource( 1 )
+
+[node name="CSGBox3" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.0354, 4, 0 )
+width = 4.0
+height = 6.0
+depth = 4.0
+material = SubResource( 1 )
+
+[node name="CSGBox4" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 60.2891 )
+width = 4.0
+height = 6.0
+depth = 4.0
+material = SubResource( 1 )
+
+[node name="CSGBox5" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.8907, 4, 60.2891 )
+width = 4.0
+height = 6.0
+depth = 4.0
+material = SubResource( 1 )
+
+[node name="CSGBox6" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.0354, 4, 60.2891 )
+width = 4.0
+height = 6.0
+depth = 4.0
+material = SubResource( 1 )
+
+[node name="CSGBox7" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0311584, 4, -56.0814 )
+width = 4.0
+height = 6.0
+depth = 4.0
+material = SubResource( 1 )
+
+[node name="CSGBox8" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.9218, 4, -56.0814 )
+width = 4.0
+height = 6.0
+depth = 4.0
+material = SubResource( 1 )
+
+[node name="CSGBox9" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.0042, 4, -56.0814 )
+width = 4.0
+height = 6.0
+depth = 4.0
+material = SubResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.14303, 10.4194 )
