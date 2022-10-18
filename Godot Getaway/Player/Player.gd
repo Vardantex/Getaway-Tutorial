@@ -1,10 +1,11 @@
 extends VehicleBody
 
 const MAX_STEER_ANGLE = .35
-const STEER_SPEED = .5
+const STEER_SPEED = .3
 
 const MAX_ENGINE_FORCE = 110
 const MAX_BRAKE_FORCE = 10
+const MAX_SPEED = 30
 
 var steer_target = 0.0 #Where do I want the wheels to go
 var steer_angle = 0.0 #Where are the wheels now
@@ -49,12 +50,13 @@ func apply_throttle():
 	var forward = Input.get_action_strength("WASD_FORWARD")
 	var back = Input.get_action_strength("WASD_BACKWARD")
 	
-	if back:
-		throttle_val = -back
-	elif forward:
-		throttle_val = forward 
-		
-	return throttle_val * MAX_ENGINE_FORCE
+	if linear_velocity.length() < MAX_SPEED:
+		if back:
+			throttle_val = -back
+		elif forward:
+			throttle_val = forward 
+			
+		return throttle_val * MAX_ENGINE_FORCE
 
 func apply_brakes():
 	#brake is sef off by default
